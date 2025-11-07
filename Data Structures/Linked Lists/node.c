@@ -9,10 +9,18 @@ Node* CreateNode(int data) {
     return node;
 }
 
-void InsertNode(Node* head, int data) {
+void InsertEnd(Node* head, int data) {
+    // printf("Inserting %d at the end\n", data);
     Node* tmp = head;
     while (tmp->next != NULL) tmp = tmp->next;
     tmp->next = CreateNode(data);
+}
+
+void InsertBeginning(Node** head, int data) {
+    // printf("Inserting %d at the beginning\n", data);
+    Node* new = CreateNode(data);
+    new->next = *head;
+    *head = new;
 }
 
 void PrintList(Node* head) {
