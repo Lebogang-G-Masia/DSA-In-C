@@ -12,4 +12,6 @@ int main() {
     InsertBeginning(&head, 0);
     InsertBeginning(&head, -5);
     PrintList(head);
+    ReverseList(&head);
+    PrintList(head);
 }

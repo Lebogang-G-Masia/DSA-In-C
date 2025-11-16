@@ -24,10 +24,25 @@ void InsertBeginning(Node** head, int data) {
 }
 
 void PrintList(Node* head) {
-    Node* tmp = head;
-    while (tmp != NULL) {
-        printf("%d ", tmp->data);
-        tmp = tmp->next;
+    Node* x;
+    for (x = head; x != NULL; x = x->next) {
+        printf("%d ", x->data);
     }
     printf("\n");
+}
+
+void ReverseList(Node** head) {
+    Node* temp = *head;
+    if (temp->next == NULL) return;
+    Node* t = temp->next;
+    Node* y = NULL;
+    temp->next = NULL;
+    while (t != NULL) {
+        if (t->next != NULL) y = t->next;
+        else y = NULL;
+        t->next = temp;
+        *head = t;
+        temp = t;
+        t = y;
+    }
 }

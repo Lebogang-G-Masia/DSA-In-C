@@ -13,3 +13,4 @@ Node* CreateNode(int);
 void InsertEnd(Node*, int);
 void InsertBeginning(Node**, int);
 void PrintList(Node*);
+void ReverseList(Node**);
